@@ -46,35 +46,35 @@
             this.tsmiUncheckAll = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSendNamesToAddress = new System.Windows.Forms.Button();
             this.tabUtilities = new System.Windows.Forms.TabControl();
-            this.tpCheckNameExists = new System.Windows.Forms.TabPage();
-            this.tpBulkRegisterNames = new System.Windows.Forms.TabPage();
-            this.tpBulkSendNames = new System.Windows.Forms.TabPage();
-            this.msMenu = new System.Windows.Forms.MenuStrip();
-            this.tsmiFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTools = new System.Windows.Forms.ToolStripMenuItem();
-            this.tscbWallets = new System.Windows.Forms.ToolStripComboBox();
-            this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.tpGuide = new System.Windows.Forms.TabPage();
             this.txtGuide = new System.Windows.Forms.TextBox();
-            this.txtSendGuide = new System.Windows.Forms.TextBox();
-            this.lblChiAddress = new System.Windows.Forms.Label();
-            this.lblListOfNamesToRegister = new System.Windows.Forms.Label();
-            this.lblRegisterNamesResults = new System.Windows.Forms.Label();
-            this.txtRegisterGuide = new System.Windows.Forms.TextBox();
-            this.txtNameExistsGuide = new System.Windows.Forms.TextBox();
-            this.lblNameToCheck = new System.Windows.Forms.Label();
+            this.tpCheckNameExists = new System.Windows.Forms.TabPage();
             this.chkNameIsMine = new System.Windows.Forms.CheckBox();
+            this.lblNameToCheck = new System.Windows.Forms.Label();
+            this.txtNameExistsGuide = new System.Windows.Forms.TextBox();
+            this.tpBulkRegisterNames = new System.Windows.Forms.TabPage();
+            this.txtRegisterGuide = new System.Windows.Forms.TextBox();
+            this.lblRegisterNamesResults = new System.Windows.Forms.Label();
+            this.lblListOfNamesToRegister = new System.Windows.Forms.Label();
+            this.tpBulkSendNames = new System.Windows.Forms.TabPage();
+            this.lblChiAddress = new System.Windows.Forms.Label();
+            this.txtSendGuide = new System.Windows.Forms.TextBox();
+            this.msMenu = new System.Windows.Forms.MenuStrip();
+            this.tsmiFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTools = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.tscbWallets = new System.Windows.Forms.ToolStripComboBox();
+            this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGetTheCodeOnGitHub = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsNameListMenu.SuspendLayout();
             this.tabUtilities.SuspendLayout();
+            this.tpGuide.SuspendLayout();
             this.tpCheckNameExists.SuspendLayout();
             this.tpBulkRegisterNames.SuspendLayout();
             this.tpBulkSendNames.SuspendLayout();
             this.msMenu.SuspendLayout();
-            this.tpGuide.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCheckSingleNameExists
@@ -245,101 +245,6 @@
             this.tabUtilities.Size = new System.Drawing.Size(717, 399);
             this.tabUtilities.TabIndex = 12;
             // 
-            // tpCheckNameExists
-            // 
-            this.tpCheckNameExists.Controls.Add(this.chkNameIsMine);
-            this.tpCheckNameExists.Controls.Add(this.lblNameToCheck);
-            this.tpCheckNameExists.Controls.Add(this.txtNameExistsGuide);
-            this.tpCheckNameExists.Controls.Add(this.txtCheckSingleNameExists);
-            this.tpCheckNameExists.Controls.Add(this.btnCheckSingleNameExists);
-            this.tpCheckNameExists.Controls.Add(this.chkCheckSingleNameExists);
-            this.tpCheckNameExists.Location = new System.Drawing.Point(4, 22);
-            this.tpCheckNameExists.Name = "tpCheckNameExists";
-            this.tpCheckNameExists.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCheckNameExists.Size = new System.Drawing.Size(709, 373);
-            this.tpCheckNameExists.TabIndex = 0;
-            this.tpCheckNameExists.Text = "Check Name Exists";
-            this.tpCheckNameExists.UseVisualStyleBackColor = true;
-            // 
-            // tpBulkRegisterNames
-            // 
-            this.tpBulkRegisterNames.Controls.Add(this.txtRegisterGuide);
-            this.tpBulkRegisterNames.Controls.Add(this.lblRegisterNamesResults);
-            this.tpBulkRegisterNames.Controls.Add(this.lblListOfNamesToRegister);
-            this.tpBulkRegisterNames.Controls.Add(this.btnCreateNamesFromList);
-            this.tpBulkRegisterNames.Controls.Add(this.txtNameListToCreate);
-            this.tpBulkRegisterNames.Controls.Add(this.txtNameListResults);
-            this.tpBulkRegisterNames.Location = new System.Drawing.Point(4, 22);
-            this.tpBulkRegisterNames.Name = "tpBulkRegisterNames";
-            this.tpBulkRegisterNames.Padding = new System.Windows.Forms.Padding(3);
-            this.tpBulkRegisterNames.Size = new System.Drawing.Size(709, 373);
-            this.tpBulkRegisterNames.TabIndex = 1;
-            this.tpBulkRegisterNames.Text = "Bulk Register Names";
-            this.tpBulkRegisterNames.UseVisualStyleBackColor = true;
-            // 
-            // tpBulkSendNames
-            // 
-            this.tpBulkSendNames.Controls.Add(this.lblChiAddress);
-            this.tpBulkSendNames.Controls.Add(this.txtSendGuide);
-            this.tpBulkSendNames.Controls.Add(this.btnGetNamesInWallet);
-            this.tpBulkSendNames.Controls.Add(this.btnSendNamesToAddress);
-            this.tpBulkSendNames.Controls.Add(this.txtChiAddressToSendNamesTo);
-            this.tpBulkSendNames.Controls.Add(this.lvNames);
-            this.tpBulkSendNames.Controls.Add(this.txtWalletNames);
-            this.tpBulkSendNames.Location = new System.Drawing.Point(4, 22);
-            this.tpBulkSendNames.Name = "tpBulkSendNames";
-            this.tpBulkSendNames.Padding = new System.Windows.Forms.Padding(3);
-            this.tpBulkSendNames.Size = new System.Drawing.Size(709, 373);
-            this.tpBulkSendNames.TabIndex = 2;
-            this.tpBulkSendNames.Text = "Bulk Send Names";
-            this.tpBulkSendNames.UseVisualStyleBackColor = true;
-            // 
-            // msMenu
-            // 
-            this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiFile,
-            this.tsmiTools,
-            this.tscbWallets,
-            this.tsmiHelp});
-            this.msMenu.Location = new System.Drawing.Point(0, 0);
-            this.msMenu.Name = "msMenu";
-            this.msMenu.Size = new System.Drawing.Size(741, 27);
-            this.msMenu.TabIndex = 13;
-            this.msMenu.Text = "menuStrip1";
-            // 
-            // tsmiFile
-            // 
-            this.tsmiFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiExit});
-            this.tsmiFile.Name = "tsmiFile";
-            this.tsmiFile.Size = new System.Drawing.Size(37, 23);
-            this.tsmiFile.Text = "&File";
-            // 
-            // tsmiTools
-            // 
-            this.tsmiTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiSettings});
-            this.tsmiTools.Name = "tsmiTools";
-            this.tsmiTools.Size = new System.Drawing.Size(47, 23);
-            this.tsmiTools.Text = "&Tools";
-            // 
-            // tscbWallets
-            // 
-            this.tscbWallets.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tscbWallets.Name = "tscbWallets";
-            this.tscbWallets.Size = new System.Drawing.Size(121, 23);
-            this.tscbWallets.ToolTipText = "Wallets";
-            this.tscbWallets.SelectedIndexChanged += new System.EventHandler(this.tscbWallets_SelectedIndexChanged);
-            // 
-            // tsmiHelp
-            // 
-            this.tsmiHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiAbout,
-            this.tsmiGetTheCodeOnGitHub});
-            this.tsmiHelp.Name = "tsmiHelp";
-            this.tsmiHelp.Size = new System.Drawing.Size(44, 23);
-            this.tsmiHelp.Text = "&Help";
-            // 
             // tpGuide
             // 
             this.tpGuide.Controls.Add(this.txtGuide);
@@ -363,59 +268,40 @@
             this.txtGuide.TabIndex = 0;
             this.txtGuide.Text = resources.GetString("txtGuide.Text");
             // 
-            // txtSendGuide
+            // tpCheckNameExists
             // 
-            this.txtSendGuide.Location = new System.Drawing.Point(6, 6);
-            this.txtSendGuide.MaxLength = 327673344;
-            this.txtSendGuide.Multiline = true;
-            this.txtSendGuide.Name = "txtSendGuide";
-            this.txtSendGuide.ReadOnly = true;
-            this.txtSendGuide.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtSendGuide.Size = new System.Drawing.Size(319, 111);
-            this.txtSendGuide.TabIndex = 12;
-            this.txtSendGuide.Text = resources.GetString("txtSendGuide.Text");
+            this.tpCheckNameExists.Controls.Add(this.chkNameIsMine);
+            this.tpCheckNameExists.Controls.Add(this.lblNameToCheck);
+            this.tpCheckNameExists.Controls.Add(this.txtNameExistsGuide);
+            this.tpCheckNameExists.Controls.Add(this.txtCheckSingleNameExists);
+            this.tpCheckNameExists.Controls.Add(this.btnCheckSingleNameExists);
+            this.tpCheckNameExists.Controls.Add(this.chkCheckSingleNameExists);
+            this.tpCheckNameExists.Location = new System.Drawing.Point(4, 22);
+            this.tpCheckNameExists.Name = "tpCheckNameExists";
+            this.tpCheckNameExists.Padding = new System.Windows.Forms.Padding(3);
+            this.tpCheckNameExists.Size = new System.Drawing.Size(709, 373);
+            this.tpCheckNameExists.TabIndex = 0;
+            this.tpCheckNameExists.Text = "Check Name Exists";
+            this.tpCheckNameExists.UseVisualStyleBackColor = true;
             // 
-            // lblChiAddress
+            // chkNameIsMine
             // 
-            this.lblChiAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblChiAddress.AutoSize = true;
-            this.lblChiAddress.Location = new System.Drawing.Point(6, 324);
-            this.lblChiAddress.Name = "lblChiAddress";
-            this.lblChiAddress.Size = new System.Drawing.Size(69, 13);
-            this.lblChiAddress.TabIndex = 13;
-            this.lblChiAddress.Text = "CHI Address:";
+            this.chkNameIsMine.AutoSize = true;
+            this.chkNameIsMine.Enabled = false;
+            this.chkNameIsMine.Location = new System.Drawing.Point(9, 169);
+            this.chkNameIsMine.Name = "chkNameIsMine";
+            this.chkNameIsMine.Size = new System.Drawing.Size(15, 14);
+            this.chkNameIsMine.TabIndex = 11;
+            this.chkNameIsMine.UseVisualStyleBackColor = true;
             // 
-            // lblListOfNamesToRegister
+            // lblNameToCheck
             // 
-            this.lblListOfNamesToRegister.AutoSize = true;
-            this.lblListOfNamesToRegister.Location = new System.Drawing.Point(6, 121);
-            this.lblListOfNamesToRegister.Name = "lblListOfNamesToRegister";
-            this.lblListOfNamesToRegister.Size = new System.Drawing.Size(118, 13);
-            this.lblListOfNamesToRegister.TabIndex = 6;
-            this.lblListOfNamesToRegister.Text = "List of names to register";
-            // 
-            // lblRegisterNamesResults
-            // 
-            this.lblRegisterNamesResults.AutoSize = true;
-            this.lblRegisterNamesResults.Location = new System.Drawing.Point(344, 120);
-            this.lblRegisterNamesResults.Name = "lblRegisterNamesResults";
-            this.lblRegisterNamesResults.Size = new System.Drawing.Size(139, 13);
-            this.lblRegisterNamesResults.TabIndex = 7;
-            this.lblRegisterNamesResults.Text = "Results of registering names";
-            // 
-            // txtRegisterGuide
-            // 
-            this.txtRegisterGuide.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRegisterGuide.Location = new System.Drawing.Point(6, 8);
-            this.txtRegisterGuide.MaxLength = 327673344;
-            this.txtRegisterGuide.Multiline = true;
-            this.txtRegisterGuide.Name = "txtRegisterGuide";
-            this.txtRegisterGuide.ReadOnly = true;
-            this.txtRegisterGuide.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtRegisterGuide.Size = new System.Drawing.Size(697, 81);
-            this.txtRegisterGuide.TabIndex = 8;
-            this.txtRegisterGuide.Text = resources.GetString("txtRegisterGuide.Text");
+            this.lblNameToCheck.AutoSize = true;
+            this.lblNameToCheck.Location = new System.Drawing.Point(6, 97);
+            this.lblNameToCheck.Name = "lblNameToCheck";
+            this.lblNameToCheck.Size = new System.Drawing.Size(80, 13);
+            this.lblNameToCheck.TabIndex = 10;
+            this.lblNameToCheck.Text = "Name to check";
             // 
             // txtNameExistsGuide
             // 
@@ -433,24 +319,113 @@
     "Click the Check button to see if the name exists.\r\n\r\nThe results are output in t" +
     "he checkboxes.\r\n\r\n";
             // 
-            // lblNameToCheck
+            // tpBulkRegisterNames
             // 
-            this.lblNameToCheck.AutoSize = true;
-            this.lblNameToCheck.Location = new System.Drawing.Point(6, 97);
-            this.lblNameToCheck.Name = "lblNameToCheck";
-            this.lblNameToCheck.Size = new System.Drawing.Size(80, 13);
-            this.lblNameToCheck.TabIndex = 10;
-            this.lblNameToCheck.Text = "Name to check";
+            this.tpBulkRegisterNames.Controls.Add(this.txtRegisterGuide);
+            this.tpBulkRegisterNames.Controls.Add(this.lblRegisterNamesResults);
+            this.tpBulkRegisterNames.Controls.Add(this.lblListOfNamesToRegister);
+            this.tpBulkRegisterNames.Controls.Add(this.btnCreateNamesFromList);
+            this.tpBulkRegisterNames.Controls.Add(this.txtNameListToCreate);
+            this.tpBulkRegisterNames.Controls.Add(this.txtNameListResults);
+            this.tpBulkRegisterNames.Location = new System.Drawing.Point(4, 22);
+            this.tpBulkRegisterNames.Name = "tpBulkRegisterNames";
+            this.tpBulkRegisterNames.Padding = new System.Windows.Forms.Padding(3);
+            this.tpBulkRegisterNames.Size = new System.Drawing.Size(709, 373);
+            this.tpBulkRegisterNames.TabIndex = 1;
+            this.tpBulkRegisterNames.Text = "Bulk Register Names";
+            this.tpBulkRegisterNames.UseVisualStyleBackColor = true;
             // 
-            // chkNameIsMine
+            // txtRegisterGuide
             // 
-            this.chkNameIsMine.AutoSize = true;
-            this.chkNameIsMine.Enabled = false;
-            this.chkNameIsMine.Location = new System.Drawing.Point(9, 169);
-            this.chkNameIsMine.Name = "chkNameIsMine";
-            this.chkNameIsMine.Size = new System.Drawing.Size(15, 14);
-            this.chkNameIsMine.TabIndex = 11;
-            this.chkNameIsMine.UseVisualStyleBackColor = true;
+            this.txtRegisterGuide.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRegisterGuide.Location = new System.Drawing.Point(6, 8);
+            this.txtRegisterGuide.MaxLength = 327673344;
+            this.txtRegisterGuide.Multiline = true;
+            this.txtRegisterGuide.Name = "txtRegisterGuide";
+            this.txtRegisterGuide.ReadOnly = true;
+            this.txtRegisterGuide.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtRegisterGuide.Size = new System.Drawing.Size(697, 81);
+            this.txtRegisterGuide.TabIndex = 8;
+            this.txtRegisterGuide.Text = resources.GetString("txtRegisterGuide.Text");
+            // 
+            // lblRegisterNamesResults
+            // 
+            this.lblRegisterNamesResults.AutoSize = true;
+            this.lblRegisterNamesResults.Location = new System.Drawing.Point(344, 120);
+            this.lblRegisterNamesResults.Name = "lblRegisterNamesResults";
+            this.lblRegisterNamesResults.Size = new System.Drawing.Size(139, 13);
+            this.lblRegisterNamesResults.TabIndex = 7;
+            this.lblRegisterNamesResults.Text = "Results of registering names";
+            // 
+            // lblListOfNamesToRegister
+            // 
+            this.lblListOfNamesToRegister.AutoSize = true;
+            this.lblListOfNamesToRegister.Location = new System.Drawing.Point(6, 121);
+            this.lblListOfNamesToRegister.Name = "lblListOfNamesToRegister";
+            this.lblListOfNamesToRegister.Size = new System.Drawing.Size(118, 13);
+            this.lblListOfNamesToRegister.TabIndex = 6;
+            this.lblListOfNamesToRegister.Text = "List of names to register";
+            // 
+            // tpBulkSendNames
+            // 
+            this.tpBulkSendNames.Controls.Add(this.lblChiAddress);
+            this.tpBulkSendNames.Controls.Add(this.txtSendGuide);
+            this.tpBulkSendNames.Controls.Add(this.btnGetNamesInWallet);
+            this.tpBulkSendNames.Controls.Add(this.btnSendNamesToAddress);
+            this.tpBulkSendNames.Controls.Add(this.txtChiAddressToSendNamesTo);
+            this.tpBulkSendNames.Controls.Add(this.lvNames);
+            this.tpBulkSendNames.Controls.Add(this.txtWalletNames);
+            this.tpBulkSendNames.Location = new System.Drawing.Point(4, 22);
+            this.tpBulkSendNames.Name = "tpBulkSendNames";
+            this.tpBulkSendNames.Padding = new System.Windows.Forms.Padding(3);
+            this.tpBulkSendNames.Size = new System.Drawing.Size(709, 373);
+            this.tpBulkSendNames.TabIndex = 2;
+            this.tpBulkSendNames.Text = "Bulk Send Names";
+            this.tpBulkSendNames.UseVisualStyleBackColor = true;
+            // 
+            // lblChiAddress
+            // 
+            this.lblChiAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblChiAddress.AutoSize = true;
+            this.lblChiAddress.Location = new System.Drawing.Point(6, 324);
+            this.lblChiAddress.Name = "lblChiAddress";
+            this.lblChiAddress.Size = new System.Drawing.Size(69, 13);
+            this.lblChiAddress.TabIndex = 13;
+            this.lblChiAddress.Text = "CHI Address:";
+            // 
+            // txtSendGuide
+            // 
+            this.txtSendGuide.Location = new System.Drawing.Point(6, 6);
+            this.txtSendGuide.MaxLength = 327673344;
+            this.txtSendGuide.Multiline = true;
+            this.txtSendGuide.Name = "txtSendGuide";
+            this.txtSendGuide.ReadOnly = true;
+            this.txtSendGuide.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtSendGuide.Size = new System.Drawing.Size(319, 111);
+            this.txtSendGuide.TabIndex = 12;
+            this.txtSendGuide.Text = resources.GetString("txtSendGuide.Text");
+            // 
+            // msMenu
+            // 
+            this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiFile,
+            this.tsmiTools,
+            this.tscbWallets,
+            this.tsmiHelp});
+            this.msMenu.Location = new System.Drawing.Point(0, 0);
+            this.msMenu.Name = "msMenu";
+            this.msMenu.Size = new System.Drawing.Size(741, 27);
+            this.msMenu.TabIndex = 13;
+            this.msMenu.Text = "menuStrip1";
+            // 
+            // tsmiFile
+            // 
+            this.tsmiFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiExit});
+            this.tsmiFile.Name = "tsmiFile";
+            this.tsmiFile.Size = new System.Drawing.Size(37, 23);
+            this.tsmiFile.Text = "&File";
             // 
             // tsmiExit
             // 
@@ -460,6 +435,14 @@
             this.tsmiExit.Text = "E&xit";
             this.tsmiExit.Click += new System.EventHandler(this.tsmiExit_Click);
             // 
+            // tsmiTools
+            // 
+            this.tsmiTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiSettings});
+            this.tsmiTools.Name = "tsmiTools";
+            this.tsmiTools.Size = new System.Drawing.Size(47, 23);
+            this.tsmiTools.Text = "&Tools";
+            // 
             // tsmiSettings
             // 
             this.tsmiSettings.Image = global::XayaNameUtility.Properties.Resources.ROMx116gear;
@@ -467,6 +450,23 @@
             this.tsmiSettings.Size = new System.Drawing.Size(116, 22);
             this.tsmiSettings.Text = "&Settings";
             this.tsmiSettings.Click += new System.EventHandler(this.tsmiSettings_Click);
+            // 
+            // tscbWallets
+            // 
+            this.tscbWallets.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tscbWallets.Name = "tscbWallets";
+            this.tscbWallets.Size = new System.Drawing.Size(121, 23);
+            this.tscbWallets.ToolTipText = "Wallets";
+            this.tscbWallets.SelectedIndexChanged += new System.EventHandler(this.tscbWallets_SelectedIndexChanged);
+            // 
+            // tsmiHelp
+            // 
+            this.tsmiHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiAbout,
+            this.tsmiGetTheCodeOnGitHub});
+            this.tsmiHelp.Name = "tsmiHelp";
+            this.tsmiHelp.Size = new System.Drawing.Size(44, 23);
+            this.tsmiHelp.Text = "&Help";
             // 
             // tsmiAbout
             // 
@@ -501,6 +501,8 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.XayaNameUtility_KeyDown);
             this.cmsNameListMenu.ResumeLayout(false);
             this.tabUtilities.ResumeLayout(false);
+            this.tpGuide.ResumeLayout(false);
+            this.tpGuide.PerformLayout();
             this.tpCheckNameExists.ResumeLayout(false);
             this.tpCheckNameExists.PerformLayout();
             this.tpBulkRegisterNames.ResumeLayout(false);
@@ -509,8 +511,6 @@
             this.tpBulkSendNames.PerformLayout();
             this.msMenu.ResumeLayout(false);
             this.msMenu.PerformLayout();
-            this.tpGuide.ResumeLayout(false);
-            this.tpGuide.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

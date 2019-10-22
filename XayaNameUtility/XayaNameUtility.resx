@@ -127,6 +127,10 @@ NOTE: You must have xayad running to use this utility. xayad will already be run
 
 First, open the Settings and use the button to fill in your RPC username and password. Remove settings with no password then save the settings.
 
+There are basic settings for the 1) Game, 2) Vault, and 3) Default wallets. If you're running the Electron wallet, the Default setting cannot be saved and you must either delete it or load the Default wallet using xaya-cli. The command to load the wallet with xaya-cli is:
+
+&gt; xaya-cli loadwallet "wallet.dat"
+
 Once you've got your wallet settings correct, you can use the combobox in the toolbar to select which wallet you wish to use. 
 
 Check the various tabs for different functionality. They're intuitive and self-explanatory.

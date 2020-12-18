@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BitcoinLib;
@@ -207,6 +210,97 @@ namespace XayaNameUtility
             System.Diagnostics.Process.Start("https://github.com/RenegadeMinds/XayaNameUtility");
         }
 
+        private void btnATTACK_Click(object sender, EventArgs e)
+        {
+            CancelAttack = false;
+            Thread thread = new Thread(new ThreadStart(FindPassword));
+            thread.Start();
+        }
+
+        public void FindPassword()
+        {
+            // We're going to use an address for testing below. This gets an address with coins in it. 
+            List<List<BitcoinLib.Responses.ListAddressGroupingsResponse>> listAddressGroupings = xayaCoinService.ListAddressGroupings();
+
+            string address = string.Empty;
+
+            foreach (var v in listAddressGroupings)
+            {
+                foreach (var a in v)
+                {
+                    if (a.Balance > 0)
+                    {
+                        address = a.Address;
+                        break;
+                    }
+                }
+                if (address != string.Empty)
+                    break;
+            }
+
+            // possible to stop if there are no coins in the wallet
+
+            // Create a unique file name for the wallet dump test if you want to use that method
+            // string dumpfile = "Dump file test - " + DateTime.Now.Ticks.ToString();
+            // Create a string to hold the private key for the address we got above. 
+            // This is for testing to see if we got the password right.
+            string privatekey = string.Empty;
+
+            // Create a string for a file name. We'll write the password to that file if we find it.
+            string found_password_file = "XAYA PASSWORD FOUND - " + DateTime.Now.Ticks.ToString() + "- xaya.txt";
+
+            // Keep track of time
+            Stopwatch s = Stopwatch.StartNew();
+            long previous_elapsed_time = 0;
+            long current_elapsed_time = 0;
+
+            foreach (string password in txtDictionary.Lines)
+            {
+                if (CancelAttack)
+                    break;
+
+                current_elapsed_time = s.ElapsedMilliseconds;
+
+                // Try the password
+                string result = xayaCoinService.WalletPassphrase(password, 10000000);
+                // We need to test to see if the password actually unlocked the wallet. 
+                // There is no actual method for this, so we use another method to see if it worked,
+                // and if it worked, then the wallet is unlocked.
+                // If it didn't work, the wallet is still locked. 
+                privatekey = xayaCoinService.DumpPrivKey(address);
+
+                this.SafeInvoke(d => d.UpdatePasswordFinding( password + "\t" + result + " (" + current_elapsed_time.ToString() + "s :: +" + (current_elapsed_time - previous_elapsed_time).ToString() + "s)" + Environment.NewLine ));
+                if (privatekey != null && privatekey != string.Empty)
+                {
+                    // We've got it! We found the password!
+                    File.WriteAllText(found_password_file, password);
+                    this.SafeInvoke(d => d.UpdatePasswordFinding( "FOUND THE PASSWORD! It is: " + password + Environment.NewLine + "Your password is saved in the '" + found_password_file + "' file. It is located in the same folder as this program. " + Environment.NewLine ));
+                    // Stop processing at this point.
+                    break;
+                }
+                previous_elapsed_time = current_elapsed_time;
+            }
+
+            s.Stop();
+
+            this.SafeInvoke(d => d.UpdatePasswordFinding("Finished in " + s.ElapsedMilliseconds.ToString() + "s"));
+
+        }
+
+        public void UpdatePasswordFinding(string text)
+        {
+            txtAttackResults.Text += text;
+            txtAttackResults.SelectionStart = txtAttackResults.Text.Length - 1;
+            txtAttackResults.ScrollToCaret();
+        }
+
+        bool CancelAttack = false;
+
+        private void btnCancelAttack_Click(object sender, EventArgs e)
+        {
+            CancelAttack = !CancelAttack;
+        }
+
         private void PopulateWalletComboBox(string returnToWalletName)
         {
             // Load wallet settings into combobox
@@ -232,7 +326,8 @@ namespace XayaNameUtility
             }
             if (returnToWalletName == string.Empty)
             {
-                tscbWallets.ComboBox.SelectedIndex = 0;
+                if (tscbWallets.ComboBox.Items.Count > 0)
+                    tscbWallets.ComboBox.SelectedIndex = 0; // 2020-03-26 - fixed for null errors.
             }
             else
             {
@@ -244,7 +339,14 @@ namespace XayaNameUtility
                 }
                 catch
                 {
-                    tscbWallets.ComboBox.SelectedIndex = 0;
+                    if (tscbWallets.Items.Count > 0)
+                    {
+                        tscbWallets.ComboBox.SelectedIndex = 0;
+                    }
+                    else
+                    {
+                        tscbWallets.Items.Add("NO WALLETS SET");
+                    }
                 }
             }
 
@@ -297,9 +399,16 @@ namespace XayaNameUtility
                     // Create the name because it doesn't exist.
                     string result = xayaCoinService.RegisterName(line, "{}", new object());
                     if (result == "Failed.")
-                    {   sb.AppendLine("\"" + line + "\" failed to register. " + result); }
+                    { sb.AppendLine("\"" + line + "\" failed to register. " + result); }
                     else
-                    {   sb.AppendLine("\"" + line + "\" registered successfully. " + result); }
+                    {
+                        if (result != string.Empty && result != null)
+                        {
+                            sb.AppendLine("\"" + line + "\" registered successfully. " + result);
+                        }
+                        else
+                        { sb.AppendLine("\"" + line + "\" Failed for one reason or another, e.g. too many transactions, wallet is locked, couldn't submit more, etc. " + result); }
+                    }
                 }
                 else
                 {

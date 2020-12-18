@@ -85,7 +85,7 @@ namespace XayaNameUtility
                 }
                 catch
                 {
-                    MessageBox.Show("The \"" + item.Text + "\" wallet settings are invalid.", "Invalid Wallet Settings");
+                    MessageBox.Show("The \"" + item.Text + "\" wallet settings are invalid.\r\n\r\nIf you're trying to load the default (QT) wallet, you must load it using xaya-cli as stated in the guide.", "Invalid Wallet Settings");
                     continue;
                 }
 
@@ -141,10 +141,16 @@ namespace XayaNameUtility
 
         private void btnGetCookieUserPass_Click(object sender, EventArgs e)
         {
+            GetCookieUserPass();
+        }
+
+        private void GetCookieUserPass()
+        {
             CookieReader cookieReader = new CookieReader();
             txtRpcUsername.Text = cookieReader.Username;
             txtRpcPassword.Text = cookieReader.Userpassword;
         }
+
 
         private void btnResetSettings_Click(object sender, EventArgs e)
         {
@@ -154,11 +160,47 @@ namespace XayaNameUtility
                 return;
 
             Properties.Settings.Default.Reset(); // This deletes everything in the user.config file.
+            var path = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal).FilePath;
+
         }
 
         private void btnCloseSettings_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void btnGame_Click(object sender, EventArgs e)
+        {
+            txtWalletName.Text = "game.dat";
+            txtDaemonUrl.Text = "http://localhost:8396/wallet/game.dat";
+            GetCookieUserPass();
+            txtWalletPassword.Text = string.Empty;
+            txtRpcRequestTimeoutInSeconds.Text = "60";
+        }
+
+        private void btnVault_Click(object sender, EventArgs e)
+        {
+            DoDefaults("vault.dat");
+        }
+
+        private void btnWallet_Click(object sender, EventArgs e)
+        {
+            DoDefaults("wallet.dat");
+        }
+
+        private void DoDefaults(string wallet)
+        {
+            if (!wallet.EndsWith(".dat"))
+            {
+                wallet += ".dat";
+            }
+
+            txtWalletName.Text = wallet;
+            txtDaemonUrl.Text = "http://localhost:8396/wallet/" + wallet;
+            GetCookieUserPass();
+            txtWalletPassword.Text = string.Empty;
+            txtRpcRequestTimeoutInSeconds.Text = "60";
+        }
+
     }
 }

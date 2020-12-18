@@ -68,6 +68,13 @@
             this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGetTheCodeOnGitHub = new System.Windows.Forms.ToolStripMenuItem();
+            this.tpBruteForce = new System.Windows.Forms.TabPage();
+            this.txtDictionary = new System.Windows.Forms.TextBox();
+            this.lblDictionary = new System.Windows.Forms.Label();
+            this.btnATTACK = new System.Windows.Forms.Button();
+            this.txtAttackResults = new System.Windows.Forms.TextBox();
+            this.txtBruteForceInfo = new System.Windows.Forms.TextBox();
+            this.btnCancelAttack = new System.Windows.Forms.Button();
             this.cmsNameListMenu.SuspendLayout();
             this.tabUtilities.SuspendLayout();
             this.tpGuide.SuspendLayout();
@@ -75,6 +82,7 @@
             this.tpBulkRegisterNames.SuspendLayout();
             this.tpBulkSendNames.SuspendLayout();
             this.msMenu.SuspendLayout();
+            this.tpBruteForce.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCheckSingleNameExists
@@ -185,6 +193,7 @@
             this.chName});
             this.lvNames.ContextMenuStrip = this.cmsNameListMenu;
             this.lvNames.GridLines = true;
+            this.lvNames.HideSelection = false;
             this.lvNames.Location = new System.Drawing.Point(331, 6);
             this.lvNames.Name = "lvNames";
             this.lvNames.Size = new System.Drawing.Size(372, 361);
@@ -239,6 +248,7 @@
             this.tabUtilities.Controls.Add(this.tpCheckNameExists);
             this.tabUtilities.Controls.Add(this.tpBulkRegisterNames);
             this.tabUtilities.Controls.Add(this.tpBulkSendNames);
+            this.tabUtilities.Controls.Add(this.tpBruteForce);
             this.tabUtilities.Location = new System.Drawing.Point(12, 39);
             this.tabUtilities.Name = "tabUtilities";
             this.tabUtilities.SelectedIndex = 0;
@@ -431,7 +441,7 @@
             // 
             this.tsmiExit.Image = global::XayaNameUtility.Properties.Resources.ROMx116circleredcancel1;
             this.tsmiExit.Name = "tsmiExit";
-            this.tsmiExit.Size = new System.Drawing.Size(92, 22);
+            this.tsmiExit.Size = new System.Drawing.Size(93, 22);
             this.tsmiExit.Text = "E&xit";
             this.tsmiExit.Click += new System.EventHandler(this.tsmiExit_Click);
             // 
@@ -440,7 +450,7 @@
             this.tsmiTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiSettings});
             this.tsmiTools.Name = "tsmiTools";
-            this.tsmiTools.Size = new System.Drawing.Size(47, 23);
+            this.tsmiTools.Size = new System.Drawing.Size(46, 23);
             this.tsmiTools.Text = "&Tools";
             // 
             // tsmiSettings
@@ -454,6 +464,7 @@
             // tscbWallets
             // 
             this.tscbWallets.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tscbWallets.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
             this.tscbWallets.Name = "tscbWallets";
             this.tscbWallets.Size = new System.Drawing.Size(121, 23);
             this.tscbWallets.ToolTipText = "Wallets";
@@ -484,6 +495,88 @@
             this.tsmiGetTheCodeOnGitHub.Text = "&Get the code on GitHub";
             this.tsmiGetTheCodeOnGitHub.Click += new System.EventHandler(this.tsmiGetTheCodeOnGitHub_Click);
             // 
+            // tpBruteForce
+            // 
+            this.tpBruteForce.Controls.Add(this.btnCancelAttack);
+            this.tpBruteForce.Controls.Add(this.txtBruteForceInfo);
+            this.tpBruteForce.Controls.Add(this.txtAttackResults);
+            this.tpBruteForce.Controls.Add(this.btnATTACK);
+            this.tpBruteForce.Controls.Add(this.txtDictionary);
+            this.tpBruteForce.Controls.Add(this.lblDictionary);
+            this.tpBruteForce.Location = new System.Drawing.Point(4, 22);
+            this.tpBruteForce.Name = "tpBruteForce";
+            this.tpBruteForce.Padding = new System.Windows.Forms.Padding(3);
+            this.tpBruteForce.Size = new System.Drawing.Size(709, 373);
+            this.tpBruteForce.TabIndex = 4;
+            this.tpBruteForce.Text = "Brute Force";
+            this.tpBruteForce.UseVisualStyleBackColor = true;
+            // 
+            // txtDictionary
+            // 
+            this.txtDictionary.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtDictionary.Location = new System.Drawing.Point(6, 166);
+            this.txtDictionary.MaxLength = 327670000;
+            this.txtDictionary.Multiline = true;
+            this.txtDictionary.Name = "txtDictionary";
+            this.txtDictionary.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtDictionary.Size = new System.Drawing.Size(260, 201);
+            this.txtDictionary.TabIndex = 9;
+            this.txtDictionary.Text = "Paste your attack dictionary in here.";
+            // 
+            // lblDictionary
+            // 
+            this.lblDictionary.AutoSize = true;
+            this.lblDictionary.Location = new System.Drawing.Point(6, 142);
+            this.lblDictionary.Name = "lblDictionary";
+            this.lblDictionary.Size = new System.Drawing.Size(54, 13);
+            this.lblDictionary.TabIndex = 8;
+            this.lblDictionary.Text = "Dictionary";
+            // 
+            // btnATTACK
+            // 
+            this.btnATTACK.Location = new System.Drawing.Point(66, 137);
+            this.btnATTACK.Name = "btnATTACK";
+            this.btnATTACK.Size = new System.Drawing.Size(92, 23);
+            this.btnATTACK.TabIndex = 10;
+            this.btnATTACK.Text = "Attack";
+            this.btnATTACK.UseVisualStyleBackColor = true;
+            this.btnATTACK.Click += new System.EventHandler(this.btnATTACK_Click);
+            // 
+            // txtAttackResults
+            // 
+            this.txtAttackResults.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtAttackResults.Location = new System.Drawing.Point(272, 6);
+            this.txtAttackResults.MaxLength = 327670000;
+            this.txtAttackResults.Multiline = true;
+            this.txtAttackResults.Name = "txtAttackResults";
+            this.txtAttackResults.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtAttackResults.Size = new System.Drawing.Size(431, 361);
+            this.txtAttackResults.TabIndex = 11;
+            // 
+            // txtBruteForceInfo
+            // 
+            this.txtBruteForceInfo.Location = new System.Drawing.Point(9, 6);
+            this.txtBruteForceInfo.MaxLength = 327673344;
+            this.txtBruteForceInfo.Multiline = true;
+            this.txtBruteForceInfo.Name = "txtBruteForceInfo";
+            this.txtBruteForceInfo.ReadOnly = true;
+            this.txtBruteForceInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBruteForceInfo.Size = new System.Drawing.Size(257, 125);
+            this.txtBruteForceInfo.TabIndex = 13;
+            this.txtBruteForceInfo.Text = resources.GetString("txtBruteForceInfo.Text");
+            // 
+            // btnCancelAttack
+            // 
+            this.btnCancelAttack.Location = new System.Drawing.Point(164, 137);
+            this.btnCancelAttack.Name = "btnCancelAttack";
+            this.btnCancelAttack.Size = new System.Drawing.Size(102, 23);
+            this.btnCancelAttack.TabIndex = 14;
+            this.btnCancelAttack.Text = "Cancel Attack";
+            this.btnCancelAttack.UseVisualStyleBackColor = true;
+            this.btnCancelAttack.Click += new System.EventHandler(this.btnCancelAttack_Click);
+            // 
             // XayaNameUtility
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -511,6 +604,8 @@
             this.tpBulkSendNames.PerformLayout();
             this.msMenu.ResumeLayout(false);
             this.msMenu.PerformLayout();
+            this.tpBruteForce.ResumeLayout(false);
+            this.tpBruteForce.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -556,6 +651,13 @@
         private System.Windows.Forms.Label lblNameToCheck;
         private System.Windows.Forms.CheckBox chkNameIsMine;
         private System.Windows.Forms.ToolStripMenuItem tsmiGetTheCodeOnGitHub;
+        private System.Windows.Forms.TabPage tpBruteForce;
+        private System.Windows.Forms.Button btnATTACK;
+        private System.Windows.Forms.TextBox txtDictionary;
+        private System.Windows.Forms.Label lblDictionary;
+        private System.Windows.Forms.TextBox txtAttackResults;
+        private System.Windows.Forms.TextBox txtBruteForceInfo;
+        private System.Windows.Forms.Button btnCancelAttack;
     }
 }
 

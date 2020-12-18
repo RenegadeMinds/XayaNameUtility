@@ -125,7 +125,22 @@
 
 NOTE: You must have xayad running to use this utility. xayad will already be running if you have the Xaya Electron or QT wallet open.
 
-First, open the Settings and use the button to fill in your RPC username and password. Remove settings with no password then save the settings.
+On your first run you'll need to delete all the wallet settings. Click Tools &gt; Settings then remove the listed settings. 
+
+Next, in the Settings use the buttons to fill in your RPC username and password. Remove settings with no password then save the settings.
+
+To create a new entry:
+
+1. Click one of the "Autogenerate Defaults" buttons
+2. For Vault/Game, click the "Get RPC Username and Password from .cookie File" button (or manually enter it for the default wallet). All wallets must have these even if they are incorrect.
+3. Enter a wallet password if it is password protected, e.g. vault.dat
+4. Click the "Add Wallet" button
+5. Repeat steps 1-4 for each wallet you want to add
+6. Click the "Save Settings" button
+
+Remove any entries that you do not want to use or that don't actually exist.
+
+If in doubt, delete an entry then add it again.
 
 There are basic settings for the 1) Game, 2) Vault, and 3) Default wallets. If you're running the Electron wallet, the Default setting cannot be saved and you must either delete it or load the Default wallet using xaya-cli. The command to load the wallet with xaya-cli is:
 
@@ -139,15 +154,19 @@ You can browse the code to see how it works.
 
 This utility is not an official part of the Xaya project. 
 
-License: WTFPL - http://www.wtfpl.net</value>
+License: WTFPL - http://www.wtfpl.net
+
+
+</value>
   </data>
   <data name="txtRegisterGuide.Text" xml:space="preserve">
     <value>Copy and paste or enter names into the left text box with 1 name per line. Names MUST include the namespace, e.g. "p/" for regular Xaya player account names or "g/" for games (only developers need to register "g/" names).
 
 Click the Register button to register all those names on the Xaya blockchain.
 
-The results will appear in the right-side text box.
+NOTE: You can only register about 100 at a time. Registering more will fail. 
 
+The results will appear in the right-side text box.
 
 </value>
   </data>
@@ -165,6 +184,26 @@ Check the names you wish to send.
 Enter a CHI address in the CHI address text box.
 
 Click the Send button to send the names to the CHI address.
+
+
+</value>
+  </data>
+  <data name="txtBruteForceInfo.Text" xml:space="preserve">
+    <value>This is for brute force cracking the password on a Xaya wallet.
+
+Choose the wallet you want to crack the password for in the toolbar dropdown. 
+
+Paste in a dictionary of possible passwords in the dictionary text box.
+
+Click the Attack button to begin the attack.
+
+This is SLOOOOWWWW. Depending on your hardware, it will only be able to try about 10 passwords per second. 
+
+It could use a lot of optimisation. However, if you have coins trapped in a wallet, this is at least a tiny glimmer of hope for you to recover your coins.
+
+
+
+
 
 
 </value>

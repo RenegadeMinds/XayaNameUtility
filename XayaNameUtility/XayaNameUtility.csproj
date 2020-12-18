@@ -60,6 +60,7 @@
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
     <Compile Include="CookieReader.cs" />
+    <Compile Include="ExtensionMethod.cs" />
     <Compile Include="Settings.cs">
       <SubType>Form</SubType>
     </Compile>

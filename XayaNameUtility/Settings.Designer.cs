@@ -43,8 +43,8 @@
             this.btnAddWalletSettings = new System.Windows.Forms.Button();
             this.lvWalletSettings = new System.Windows.Forms.ListView();
             this.chWalletName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chWalletRpcUsername = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDaemonUrl = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chWalletRpcUsername = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chRpcPassword = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chWalletPassword = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chRpcRequestTimeoutInSeconds = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -53,6 +53,11 @@
             this.btnGetCookieUserPass = new System.Windows.Forms.Button();
             this.btnResetSettings = new System.Windows.Forms.Button();
             this.btnCloseSettings = new System.Windows.Forms.Button();
+            this.gbxAutoFix = new System.Windows.Forms.GroupBox();
+            this.btnWallet = new System.Windows.Forms.Button();
+            this.btnVault = new System.Windows.Forms.Button();
+            this.btnGame = new System.Windows.Forms.Button();
+            this.gbxAutoFix.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDaemonUrl
@@ -70,7 +75,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDaemonUrl.Location = new System.Drawing.Point(176, 38);
             this.txtDaemonUrl.Name = "txtDaemonUrl";
-            this.txtDaemonUrl.Size = new System.Drawing.Size(702, 20);
+            this.txtDaemonUrl.Size = new System.Drawing.Size(546, 20);
             this.txtDaemonUrl.TabIndex = 1;
             // 
             // txtWalletName
@@ -79,7 +84,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtWalletName.Location = new System.Drawing.Point(176, 12);
             this.txtWalletName.Name = "txtWalletName";
-            this.txtWalletName.Size = new System.Drawing.Size(702, 20);
+            this.txtWalletName.Size = new System.Drawing.Size(546, 20);
             this.txtWalletName.TabIndex = 3;
             // 
             // lblWalletName
@@ -97,7 +102,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRpcUsername.Location = new System.Drawing.Point(176, 64);
             this.txtRpcUsername.Name = "txtRpcUsername";
-            this.txtRpcUsername.Size = new System.Drawing.Size(471, 20);
+            this.txtRpcUsername.Size = new System.Drawing.Size(315, 20);
             this.txtRpcUsername.TabIndex = 5;
             // 
             // rpcUsername
@@ -115,7 +120,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRpcPassword.Location = new System.Drawing.Point(176, 90);
             this.txtRpcPassword.Name = "txtRpcPassword";
-            this.txtRpcPassword.Size = new System.Drawing.Size(471, 20);
+            this.txtRpcPassword.Size = new System.Drawing.Size(315, 20);
             this.txtRpcPassword.TabIndex = 7;
             // 
             // lblRpcPassword
@@ -133,7 +138,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtWalletPassword.Location = new System.Drawing.Point(176, 116);
             this.txtWalletPassword.Name = "txtWalletPassword";
-            this.txtWalletPassword.Size = new System.Drawing.Size(702, 20);
+            this.txtWalletPassword.Size = new System.Drawing.Size(546, 20);
             this.txtWalletPassword.TabIndex = 9;
             // 
             // lblWalletPassword
@@ -151,7 +156,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRpcRequestTimeoutInSeconds.Location = new System.Drawing.Point(176, 142);
             this.txtRpcRequestTimeoutInSeconds.Name = "txtRpcRequestTimeoutInSeconds";
-            this.txtRpcRequestTimeoutInSeconds.Size = new System.Drawing.Size(702, 20);
+            this.txtRpcRequestTimeoutInSeconds.Size = new System.Drawing.Size(546, 20);
             this.txtRpcRequestTimeoutInSeconds.TabIndex = 11;
             this.txtRpcRequestTimeoutInSeconds.Text = "60";
             // 
@@ -189,10 +194,11 @@
             this.chRpcRequestTimeoutInSeconds});
             this.lvWalletSettings.FullRowSelect = true;
             this.lvWalletSettings.GridLines = true;
+            this.lvWalletSettings.HideSelection = false;
             this.lvWalletSettings.Location = new System.Drawing.Point(15, 208);
             this.lvWalletSettings.MultiSelect = false;
             this.lvWalletSettings.Name = "lvWalletSettings";
-            this.lvWalletSettings.Size = new System.Drawing.Size(866, 194);
+            this.lvWalletSettings.Size = new System.Drawing.Size(866, 128);
             this.lvWalletSettings.TabIndex = 13;
             this.lvWalletSettings.UseCompatibleStateImageBehavior = false;
             this.lvWalletSettings.View = System.Windows.Forms.View.Details;
@@ -203,15 +209,15 @@
             this.chWalletName.Text = "Wallet name";
             this.chWalletName.Width = 78;
             // 
-            // chWalletRpcUsername
-            // 
-            this.chWalletRpcUsername.Text = "RPC username";
-            this.chWalletRpcUsername.Width = 92;
-            // 
             // chDaemonUrl
             // 
             this.chDaemonUrl.Text = "Daemon URL";
             this.chDaemonUrl.Width = 85;
+            // 
+            // chWalletRpcUsername
+            // 
+            this.chWalletRpcUsername.Text = "RPC username";
+            this.chWalletRpcUsername.Width = 92;
             // 
             // chRpcPassword
             // 
@@ -232,7 +238,7 @@
             // 
             this.btnSaveSettings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveSettings.Location = new System.Drawing.Point(12, 408);
+            this.btnSaveSettings.Location = new System.Drawing.Point(12, 342);
             this.btnSaveSettings.Name = "btnSaveSettings";
             this.btnSaveSettings.Size = new System.Drawing.Size(635, 23);
             this.btnSaveSettings.TabIndex = 14;
@@ -254,11 +260,11 @@
             // btnGetCookieUserPass
             // 
             this.btnGetCookieUserPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGetCookieUserPass.Location = new System.Drawing.Point(653, 62);
+            this.btnGetCookieUserPass.Location = new System.Drawing.Point(497, 62);
             this.btnGetCookieUserPass.Name = "btnGetCookieUserPass";
             this.btnGetCookieUserPass.Size = new System.Drawing.Size(225, 48);
             this.btnGetCookieUserPass.TabIndex = 16;
-            this.btnGetCookieUserPass.Text = "Get Username and Password from .cookie File";
+            this.btnGetCookieUserPass.Text = "Get RPC Username and Password from .cookie File";
             this.btnGetCookieUserPass.UseVisualStyleBackColor = true;
             this.btnGetCookieUserPass.Click += new System.EventHandler(this.btnGetCookieUserPass_Click);
             // 
@@ -266,7 +272,7 @@
             // 
             this.btnResetSettings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnResetSettings.Location = new System.Drawing.Point(653, 408);
+            this.btnResetSettings.Location = new System.Drawing.Point(653, 342);
             this.btnResetSettings.Name = "btnResetSettings";
             this.btnResetSettings.Size = new System.Drawing.Size(228, 23);
             this.btnResetSettings.TabIndex = 17;
@@ -278,7 +284,7 @@
             // 
             this.btnCloseSettings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCloseSettings.Location = new System.Drawing.Point(12, 440);
+            this.btnCloseSettings.Location = new System.Drawing.Point(12, 374);
             this.btnCloseSettings.Name = "btnCloseSettings";
             this.btnCloseSettings.Size = new System.Drawing.Size(869, 23);
             this.btnCloseSettings.TabIndex = 18;
@@ -286,11 +292,54 @@
             this.btnCloseSettings.UseVisualStyleBackColor = true;
             this.btnCloseSettings.Click += new System.EventHandler(this.btnCloseSettings_Click);
             // 
+            // gbxAutoFix
+            // 
+            this.gbxAutoFix.Controls.Add(this.btnWallet);
+            this.gbxAutoFix.Controls.Add(this.btnVault);
+            this.gbxAutoFix.Controls.Add(this.btnGame);
+            this.gbxAutoFix.Location = new System.Drawing.Point(728, 15);
+            this.gbxAutoFix.Name = "gbxAutoFix";
+            this.gbxAutoFix.Size = new System.Drawing.Size(155, 147);
+            this.gbxAutoFix.TabIndex = 19;
+            this.gbxAutoFix.TabStop = false;
+            this.gbxAutoFix.Text = "Autogenerate Defaults";
+            // 
+            // btnWallet
+            // 
+            this.btnWallet.Location = new System.Drawing.Point(6, 84);
+            this.btnWallet.Name = "btnWallet";
+            this.btnWallet.Size = new System.Drawing.Size(143, 23);
+            this.btnWallet.TabIndex = 2;
+            this.btnWallet.Text = "QT wallet defaults";
+            this.btnWallet.UseVisualStyleBackColor = true;
+            this.btnWallet.Click += new System.EventHandler(this.btnWallet_Click);
+            // 
+            // btnVault
+            // 
+            this.btnVault.Location = new System.Drawing.Point(6, 55);
+            this.btnVault.Name = "btnVault";
+            this.btnVault.Size = new System.Drawing.Size(143, 23);
+            this.btnVault.TabIndex = 1;
+            this.btnVault.Text = "Vault defaults";
+            this.btnVault.UseVisualStyleBackColor = true;
+            this.btnVault.Click += new System.EventHandler(this.btnVault_Click);
+            // 
+            // btnGame
+            // 
+            this.btnGame.Location = new System.Drawing.Point(6, 26);
+            this.btnGame.Name = "btnGame";
+            this.btnGame.Size = new System.Drawing.Size(143, 23);
+            this.btnGame.TabIndex = 0;
+            this.btnGame.Text = "Game defaults";
+            this.btnGame.UseVisualStyleBackColor = true;
+            this.btnGame.Click += new System.EventHandler(this.btnGame_Click);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 475);
+            this.ClientSize = new System.Drawing.Size(893, 409);
+            this.Controls.Add(this.gbxAutoFix);
             this.Controls.Add(this.btnCloseSettings);
             this.Controls.Add(this.btnResetSettings);
             this.Controls.Add(this.btnGetCookieUserPass);
@@ -314,6 +363,7 @@
             this.Name = "Settings";
             this.Text = "Settings";
             this.Load += new System.EventHandler(this.Settings_Load);
+            this.gbxAutoFix.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,5 +396,9 @@
         private System.Windows.Forms.Button btnGetCookieUserPass;
         private System.Windows.Forms.Button btnResetSettings;
         private System.Windows.Forms.Button btnCloseSettings;
+        private System.Windows.Forms.GroupBox gbxAutoFix;
+        private System.Windows.Forms.Button btnGame;
+        private System.Windows.Forms.Button btnVault;
+        private System.Windows.Forms.Button btnWallet;
     }
 }
